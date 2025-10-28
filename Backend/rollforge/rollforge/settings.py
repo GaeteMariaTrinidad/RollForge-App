@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -74,8 +75,13 @@ WSGI_APPLICATION = 'rollforge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rollforge',
+        'USER': 'root',
+        'PASSWORD': '1234567890',
+        # Use 127.0.0.1 to force TCP (avoids socket/named-pipe issues on some platforms)
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
